@@ -1,0 +1,51 @@
+{
+  "name": "mimus",
+  "version": "0.0.0",
+  "description": "A mocking library that supports dependency injection, recursive mocking, wrapped in a simple API.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/jshint .",
+    "test": "./bin/test",
+    "test-cov": "./node_modules/.bin/istanbul cover ./bin/test && node -e 'require(\"open\")(\"coverage/lcov-report/index.html\")'",
+    "post-install": "./bin/compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/brentlintner/mimus.git"
+  },
+  "keywords": [
+    "mocking",
+    "testing",
+    "mock",
+    "test",
+    "spy",
+    "stub",
+    "stubbing"
+  ],
+  "author": "Brent Lintner <brent.lintner@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brentlintner/mimus/issues"
+  },
+  "homepage": "https://github.com/brentlintner/mimus",
+  "dependencies": {
+    "sinon-chai": "^2.5.0",
+    "rewire": "^2.0.1",
+    "chai": "^1.9.1",
+    "sinon": "^1.10.1",
+    "esprima": "^1.2.2",
+    "underscore": "^1.6.0",
+    "coffee-script": "^1.7.1",
+    "resolve": "^0.7.1"
+  },
+  "devDependencies": {
+    "mocha": "^1.20.1",
+    "sinon-chai": "^2.5.0",
+    "chai": "^1.9.1",
+    "sinon": "^1.10.2",
+    "rewire": "^2.0.1",
+    "nodemon": "^1.2.0",
+    "istanbul": "^0.2.11",
+    "wrench": "^1.5.8"
+  }
+}
