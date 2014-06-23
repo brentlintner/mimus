@@ -2,7 +2,7 @@
   "name": "mimus",
   "version": "0.0.1",
   "description": "A test runner agnostic stubbing library for Node.JS, supporting dependency injection and auto stubbing.",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "lint": "./node_modules/.bin/jshint .",
     "test": "./bin/test",
