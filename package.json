@@ -29,9 +29,7 @@
   },
   "homepage": "https://github.com/brentlintner/mimus",
   "dependencies": {
-    "sinon-chai": "^2.5.0",
     "rewire": "^2.0.1",
-    "chai": "^1.9.1",
     "sinon": "^1.10.1",
     "esprima": "^1.2.2",
     "underscore": "^1.6.0",
