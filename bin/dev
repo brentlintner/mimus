@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-./node_modules/.bin/nodemon -e coffee -w lib bin/compile
+./node_modules/.bin/nodemon -e coffee -w lib -w test -x "bin/compile"
