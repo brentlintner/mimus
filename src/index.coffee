@@ -1,10 +1,10 @@
-path = require("path")
-fs = require("fs")
-_ = require("underscore")
-esprima = require("esprima")
-resolve = require("resolve")
-sinon = require("sinon")
-rewire = require("rewire")
+path = require "path"
+fs = require "fs"
+_ = require "underscore"
+esprima = require "esprima"
+resolve = require "resolve"
+sinon = require "sinon"
+rewire = require "rewire"
 sandbox = []
 
 set = (wired, path, value) -> wired.__set__ path, value
