@@ -100,6 +100,10 @@ The top level API's main goal is to be a one method level interface with the obj
 returned via `mimus.require` being passed around by reference. This keeps api methods off
 of the main object, and also provides a more functional way to interact with mimus.
 
+## Versioning
+
+This project ascribes to [semantic versioning](http://semver.org).
+
 ## Kudos!
 
 * [Sinon.JS](http://sinonjs.org) is currently used underneath.
