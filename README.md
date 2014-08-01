@@ -1,6 +1,8 @@
 mimus
 =====
 
+[![NPM version](https://badge.fury.io/js/mimus.svg)](http://badge.fury.io/js/mimus)
+
 [![Build Status](https://drone.io/github.com/brentlintner/mimus/status.png)](https://drone.io/github.com/brentlintner/mimus/latest)
 
 [![Dependency Status](https://david-dm.org/brentlintner/mimus.svg)](https://david-dm.org/brentlintner/mimus)
