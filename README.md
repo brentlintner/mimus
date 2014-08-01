@@ -1,6 +1,8 @@
 mimus
 =====
 
+[![Build Status](https://drone.io/github.com/brentlintner/mimus/status.png)](https://drone.io/github.com/brentlintner/mimus/latest)
+
 [![Dependency Status](https://david-dm.org/brentlintner/mimus.svg)](https://david-dm.org/brentlintner/mimus)
 
 A stubbing library with a focus on having:
