@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-./node_modules/.bin/coffee -c {lib,test}
+coffee -co lib src
+coffee -c test

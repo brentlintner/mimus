@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-./node_modules/.bin/nodemon -e coffee -w lib -w test -x "bin/compile"
+coffee -cwo lib src &
+coffee -cw test

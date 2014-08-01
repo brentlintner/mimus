@@ -7,7 +7,7 @@
     "lint": "./node_modules/.bin/jshint .",
     "test": "./bin/test",
     "test-cov": "./node_modules/.bin/istanbul cover ./bin/test && node -e 'require(\"open\")(\"coverage/lcov-report/index.html\")'",
-    "postinstall": "coffee -c lib && coffee -c test"
+    "postinstall": "bin/compile"
   },
   "repository": {
     "type": "git",
@@ -42,7 +42,6 @@
     "chai": "^1.9.1",
     "sinon": "^1.10.2",
     "rewire": "^2.0.1",
-    "nodemon": "^1.2.0",
     "istanbul": "^0.2.11",
     "wrench": "^1.5.8",
     "open": "0.0.5"
