@@ -1,6 +1,8 @@
 mimus
 =====
 
+[![Dependency Status](https://david-dm.org/brentlintner/mimus.svg)](https://david-dm.org/brentlintner/mimus)
+
 A stubbing library with a focus on having:
 
 * A simple API.
