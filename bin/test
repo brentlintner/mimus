@@ -1,25 +1,3 @@
 #!/usr/bin/env node
-var
-  path = require('path'),
-  wrench = require('wrench'),
-  Mocha = require('mocha'),
-  tests = path.join(__dirname, "..", "test")
-
-function by_js_extension(file) {
-  return /\.js$/.test(file) &&
-        !/fixtures\//.test(file)
-}
-
-function into_abs_path(relpath) {
-  return path.join(tests, relpath)
-}
-
-var runner = new Mocha({ui: "bdd", reporter: 'dot'})
-
-runner.files = wrench.readdirSyncRecursive(tests)
-                     .filter(by_js_extension)
-                     .map(into_abs_path)
-
-runner.run(function (failed) {
-  process.exit(failed !== 0 ? failed : 0)
-})
+require('./../test/runner')
+  .run(process.argv[2] || 'unit')

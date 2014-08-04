@@ -2,11 +2,14 @@
   "name": "mimus",
   "version": "0.0.3",
   "description": "A test runner agnostic stubbing library for Node.JS, supporting dependency injection and auto stubbing.",
-  "main": "lib/index.js",
+  "main": "lib/mimus.js",
   "scripts": {
-    "lint": "./node_modules/.bin/jshint .",
-    "test": "./bin/test",
-    "test-cov": "./node_modules/.bin/istanbul cover ./bin/test && node -e 'require(\"open\")(\"coverage/lcov-report/index.html\")'",
+    "lint": "jshint .",
+    "lint-cov": "bin/lint-cov",
+    "dev": "bin/dev",
+    "test": "bin/test unit && bin/test system",
+    "test-cov": "bin/test-cov",
+    "test-ci-build": "bin/test-ci-build",
     "postinstall": "bin/compile"
   },
   "repository": {
@@ -20,7 +23,9 @@
     "test",
     "spy",
     "stub",
-    "stubbing"
+    "stubbing",
+    "dependency",
+    "injection"
   ],
   "author": "Brent Lintner <brent.lintner@gmail.com>",
   "license": "MIT",
@@ -37,13 +42,13 @@
     "resolve": "^0.7.1"
   },
   "devDependencies": {
-    "mocha": "^1.20.1",
-    "sinon-chai": "^2.5.0",
     "chai": "^1.9.1",
-    "sinon": "^1.10.2",
+    "coveralls": "^2.11.1",
+    "istanbul": "^0.3.0",
+    "mocha": "^1.20.1",
     "rewire": "^2.0.1",
-    "istanbul": "^0.2.11",
-    "wrench": "^1.5.8",
-    "open": "0.0.5"
+    "sinon": "^1.10.2",
+    "sinon-chai": "^2.5.0",
+    "wrench": "^1.5.8"
   }
 }

@@ -5,6 +5,8 @@ mimus
 
 [![Build Status](https://drone.io/github.com/brentlintner/mimus/status.png)](https://drone.io/github.com/brentlintner/mimus/latest)
 
+[![Coverage Status](https://img.shields.io/coveralls/brentlintner/mimus.svg)](https://coveralls.io/r/brentlintner/mimus)
+
 [![Dependency Status](https://david-dm.org/brentlintner/mimus.svg)](https://david-dm.org/brentlintner/mimus)
 
 A stubbing library with a focus on having:
@@ -12,6 +14,9 @@ A stubbing library with a focus on having:
 * A simple API.
 * Dependency injection and auto stubbing.
 * A decoupled relationship with test runners.
+
+Note: Currently this project is using [Sinon](http://sinonjs.org) and
+[Rewire](https://www.npmjs.org/package/rewire). Check them out!
 
 ## Installation
 
@@ -26,7 +31,7 @@ A stubbing library with a focus on having:
 ### mimus.require
 
 This is the main method that you will use. It will require only the module
-you want to test against, while stubbing any specified inner dependencies
+you want to test against, while stubbing any specified internal modules,
 that can be retrieved with other methods.
 
 Require a stubbed `db` module and also stub the `mongodb` and `zlib` module.
@@ -77,22 +82,59 @@ Create a (Sinon.JS) spy.
 
 ### mimus.reset
 
-Resets all stubs and spies.
+Calls reset on every (Sinon.JS) stub/spy.
 
 ```javascript
   mimus.reset()
 ```
 
-### mimus.undo - Not Implemented
+### mimus.restore
 
-Undoes the stubbing of a module.
+Calls restore on every (Sinon.JS) stub.
 
 ```javascript
-  mimus.undo(required_module, 'internal_var_name')
+  mimus.restore()
 ```
+
 ## Examples
 
-See [Example Folder](https://github.com/brentlintner/mimus/blob/master/example).
+See the [system tests](test/system/example.coffee).
+
+## Contributing
+
+Current list of [contributors](https://github.com/brentlintner/mimus/graphs/contributors).
+
+Any contributions are welcome. Please consider tests and code quality before submitting.
+
+### Code Of Conduct
+
+See [bantik's contributor covenant](https://github.com/Bantik/contributor_covenant/blob/master/CODE_OF_CONDUCT.md)!
+
+### Issues
+
+Current issue tracker is on [github](https://github.com/brentlintner/mimus/issues).
+
+Please read any docs available before opening an issue.
+
+## Hacking
+
+    git clone git@github.com:brentlintner/mimus.git
+    cd mimus
+    npm install
+
+### Testing
+
+    npm run test
+    npm run test-cov
+
+### Code Quality
+
+    npm run lint
+    npm run lint-cov
+
+### Auto Compiling CoffeeScript
+
+    npm run dev &
 
 ## Architectural Notes
 
@@ -106,22 +148,8 @@ This project ascribes to [semantic versioning](http://semver.org).
 
 ## Kudos!
 
-* [Sinon.JS](http://sinonjs.org) is currently used underneath.
+* [Sinon](http://sinonjs.org) is currently used underneath.
 * For dependency injection, [Rewire](https://www.npmjs.org/package/rewire) is used.
 * Inspiration could not have happened with seeing [Jest](http://facebook.github.io/jest/) in action.
 
-Also, see all other [deps](https://github.com/brentlintner/mimus/blob/master/package.json).
-
-## TODO
-
-* Version 0.1.x.
-* Version 1.x.x.
-
-* Treat same path relative module requires as the same?
-* Switch out Sinon for a custom control flow API implementation.
-* Tighten and flush out private module lookups.
-* Rewrite to use ES6 syntaxes.
-* Add mocking API.
-* Heuristical auto mocking (based on methods used).
-* Set level of stubbing deepness > 1
-* mimus.undo
+Also, see all other [deps](package.json).

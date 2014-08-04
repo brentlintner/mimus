@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+rm -r coverage/
+istanbul cover --dir coverage/unit bin/test unit && \
+istanbul cover --dir coverage/system bin/test system
