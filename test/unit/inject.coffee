@@ -3,8 +3,6 @@ chai = require "chai"
 rewire = require "rewire"
 sinon = require "sinon"
 resolve = require "resolve"
-basic_module = require "./../fixtures/basic_module"
-complex_module = require "./../fixtures/complex_module"
 sinon_chai = require "./../fixtures/sinon_chai"
 expect = chai.expect
 

@@ -9,7 +9,8 @@ deps.path = require "path"
 
 # to test VariableDeclaration AST type
 # CS always compiles to VariableAssignment
-`var vdec = require("util");`
+`var vdec = require("util")`
+if !vdec then null
 
 method = (a) -> throw new Error "should not throw"
 
