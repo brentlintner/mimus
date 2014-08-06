@@ -2,15 +2,25 @@ sinon = require "sinon"
 _ = require "underscore"
 sandbox = []
 
-register = (stub_or_spy) ->
-  sandbox.push stub_or_spy
-  stub_or_spy
+register = (type, args...) ->
+  item = null
+
+  try
+    item = sinon[type].apply(sinon, args)
+    sandbox.push item
+  catch e
+    if /already wrapped/i.test e.message
+      obj = args[0]; method = args[1]
+      item = obj[method]
+    else throw e
+
+  item
 
 stub = (obj, method, func) ->
-  register sinon.stub obj, method, func
+  register 'stub', obj, method, func
 
-spy = (target, method) ->
-  register sinon.spy target, method
+spy = (obj, method) ->
+  register 'spy', obj, method
 
 reset = ->
   _.each sandbox, (stub_or_spy) ->

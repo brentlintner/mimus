@@ -32,3 +32,11 @@ describe "spying, and stubbing", ->
     expect(spy).to.eql "spy"
 
     sinon.spy = old_spy
+
+  it "re-throws any errors that is not about already wrapped stubs/spies", ->
+    _.stub sinon, "stub"
+      .throws new Error "something that is about something else"
+
+    expect ->
+      mock.stub()
+    .to.throw()

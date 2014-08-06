@@ -6,16 +6,15 @@ expect = chai.expect
 
 mimus = require "./../../lib/mimus"
 _ = null; sinon_chai (sandbox) -> _ = sandbox
+mod = null
 
 describe "blackbox testing", ->
-  mod = null
-
   beforeEach ->
-    mimus.restore()
-    mod = mimus.require "./../fixtures/complex_module", __dirname, [
-      "./basic_module",
-      "./method_module"
-    ]
+    mod = mimus.require "./../fixtures/complex_module",
+                  __dirname, [
+                    "./basic_module",
+                    "./method_module"
+                  ]
 
   it "can stub a method", ->
     mimus.stub mod, "method"
@@ -44,3 +43,20 @@ describe "blackbox testing", ->
     mimus.restore()
     expect -> mod.method "foo"
       .to.throw()
+
+  it "gracefully refuses to double wrap a stub/spy", ->
+    # try this
+    mimus.stub mod, "method"
+    mimus.stub mod, "method"
+
+    mimus.spy mod, "method"
+    mimus.spy mod, "method"
+
+    # then also try double require
+    expect ->
+      mod = mimus.require "./../fixtures/complex_module",
+                    __dirname, [ "./basic_module", "./method_module" ]
+
+      mod = mimus.require "./../fixtures/complex_module",
+                    __dirname, [ "./basic_module", "./method_module" ]
+    .not.to.throw()

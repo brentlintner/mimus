@@ -60,20 +60,21 @@ internal_modules = (ast, base, list) ->
 
   list
 
-abs_path = (loc, base) -> resolve.sync loc, basedir: base || ""
+abs_path = (loc, base) ->
+  resolve.sync loc, basedir: base || ""
 
-each_sub_mod = (file_path) ->
-  file_dirname = path.dirname file_path
-  mods = []
+each_sub_mod = (file) ->
+  base = path.dirname file
+  mods = null
 
-  if fs.existsSync file_path
-    file_data = fs.readFileSync file_path, "utf-8"
+  if fs.existsSync file
+    data = fs.readFileSync file, "utf-8"
 
-    if file_data
-      ast = esprima.parse file_data
-      mods = internal_modules ast, file_dirname
+    if data
+      ast = esprima.parse data
+      mods = internal_modules ast, base
 
-  mods
+  mods || []
 
 matches_module = (mod, base) -> (compare) -> compare is mod.path
 
