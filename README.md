@@ -9,6 +9,8 @@ mimus
 
 [![Dependency Status](https://david-dm.org/brentlintner/mimus.svg)](https://david-dm.org/brentlintner/mimus)
 
+[![devDependency Status](https://david-dm.org/brentlintner/mimus/dev-status.svg)](https://david-dm.org/brentlintner/mimus#info=devDependencies)
+
 A stubbing library with a focus on having:
 
 * A simple API.
