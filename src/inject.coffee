@@ -28,7 +28,6 @@ if_variable_declaration = (node, base, list) ->
       list.push
         name: if declare.id then declare.id.name
         path: mod_loc
-        abs_path: resolve.sync mod_loc, basedir: base
 
 if_assignment_statement = (node, base, list) ->
   exp = node && node.type == "ExpressionStatement" && node.expression
@@ -46,9 +45,8 @@ if_assignment_statement = (node, base, list) ->
     mod_loc = if right_args then exp.right.arguments[0].value
 
     list.push
-      name: name,
+      name: name
       path: mod_loc
-      abs_path: resolve.sync mod_loc, basedir: base
 
 internal_modules = (ast, base, list) ->
   list = [] unless list
@@ -62,8 +60,9 @@ internal_modules = (ast, base, list) ->
 
   list
 
-each_sub_mod = (module_path, base) ->
-  file_path = resolve.sync module_path, basedir: base
+abs_path = (loc, base) -> resolve.sync loc, basedir: base || ""
+
+each_sub_mod = (file_path) ->
   file_dirname = path.dirname file_path
   mods = []
 
@@ -76,27 +75,26 @@ each_sub_mod = (module_path, base) ->
 
   mods
 
-matches_module = (mod, base_path) ->
-  (compare_path) ->
-    abs_compare_path = path.resolve base_path, compare_path + ".js"
-    abs_compare_path == mod.abs_path or compare_path == mod.path
+matches_module = (mod, base) -> (compare) -> compare is mod.path
 
-parse_private_modules = (module_path, base_path, wired, accept) ->
-  each_sub_mod(module_path, base_path).forEach (mod) ->
-    return unless accept.some matches_module mod, module_path
+parse_private_modules = (module_path, wired, accept) ->
+  each_sub_mod module_path
+    .forEach (mod) ->
+      return unless accept.some matches_module mod, module_path
 
-    obj = get wired, mod.name
+      obj = get wired, mod.name
 
-    _.each Object.keys(obj), (key) ->
-      return unless typeof obj[key] is "function"
-      obj[key] = mock.stub obj, key
+      _.each Object.keys(obj), (key) ->
+        return unless typeof obj[key] is "function"
+        obj[key] = mock.stub obj, key
 
-    if typeof obj == "function"
-      set wired, mod.name, _.extend mock.stub(), obj
+      if typeof obj == "function"
+        set wired, mod.name, _.extend mock.stub(), obj
 
-load = (module_path, base_path, accept) ->
-  wired = rewire resolve.sync module_path, basedir: base_path
-  parse_private_modules module_path, base_path, wired, accept
+load = (module_path, base, accept) ->
+  full_path = abs_path module_path, base
+  wired = rewire full_path
+  parse_private_modules full_path, wired, accept
   wired
 
 module.exports =

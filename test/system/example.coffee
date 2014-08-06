@@ -4,7 +4,6 @@ sinon = require "sinon"
 sinon_chai = require "./../fixtures/sinon_chai"
 expect = chai.expect
 
-example = "./../fixtures/complex_module"
 mimus = require "./../../lib/mimus"
 _ = null; sinon_chai (sandbox) -> _ = sandbox
 
@@ -13,7 +12,7 @@ describe "blackbox testing", ->
 
   beforeEach ->
     mimus.restore()
-    mod = mimus.require example, __dirname, [
+    mod = mimus.require "./../fixtures/complex_module", __dirname, [
       "./basic_module",
       "./method_module"
     ]

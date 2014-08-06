@@ -13,18 +13,19 @@ sinon_chai (sandbox) -> _ = sandbox
 
 describe "requiring a module", ->
   p = "./../fixtures/basic_module"
+  abs_path = path.resolve __dirname, "../fixtures/basic_module.js"
 
   beforeEach ->
 
   it "rewires the module", ->
     stub_rewire = _.stub()
     _.stub resolve, "sync"
-      .returns path.join __dirname, "../fixtures/basic_module"
+      .returns abs_path
 
     inject.__set__ "rewire", stub_rewire
     rewired_module = inject.load p, __dirname, []
 
-    stub_rewire.should.have.been.calledWith path.resolve __dirname, p
+    stub_rewire.should.have.been.calledWith abs_path
 
 describe "setting a modules inner variable", ->
   it "uses rewire __set__", ->
