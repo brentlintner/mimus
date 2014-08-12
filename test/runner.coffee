@@ -14,9 +14,10 @@ run = (type) ->
 
   specs = path.join tests, type
 
-  runner.files = wrench.readdirSyncRecursive specs
-                       .filter by_js_extension
-                       .map into_abs_path specs
+  runner.files = wrench
+    .readdirSyncRecursive specs
+    .filter by_js_extension
+    .map into_abs_path specs
 
   runner.run process.exit
 
