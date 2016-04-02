@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-npm run lint &&
 npm run test-cov &&
 npm run lint-cov
 
