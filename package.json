@@ -1,6 +1,6 @@
 {
   "name": "mimus",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A test runner agnostic stubbing library for Node.JS, supporting dependency injection and auto stubbing.",
   "main": "lib/mimus.js",
   "scripts": {
