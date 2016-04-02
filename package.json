@@ -34,23 +34,23 @@
   },
   "homepage": "https://github.com/brentlintner/mimus",
   "dependencies": {
-    "coffee-script": "1.9.3",
-    "esprima": "2.4.0",
-    "minilog": "2.0.8",
-    "resolve": "1.1.6",
-    "rewire": "2.3.4",
-    "sinon": "1.15.3",
+    "coffee-script": "1.10.0",
+    "esprima": "2.7.2",
+    "minilog": "3.0.0",
+    "resolve": "1.1.7",
+    "rewire": "2.5.1",
+    "sinon": "1.17.3",
     "underscore": "1.8.3"
   },
   "devDependencies": {
-    "chai": "3.0.0",
-    "coffeelint": "1.10.1",
-    "coveralls": "2.11.2",
-    "istanbul": "0.3.16",
-    "jshint": "2.8.0",
-    "mocha": "2.2.5",
+    "chai": "3.5.0",
+    "coffeelint": "1.15.0",
+    "coveralls": "2.11.9",
+    "istanbul": "0.4.2",
+    "jshint": "2.9.1",
+    "mocha": "2.4.5",
     "release-it": "^2.3.1",
     "sinon-chai": "2.8.0",
-    "wrench": "1.5.8"
+    "wrench": "1.5.9"
   }
 }
