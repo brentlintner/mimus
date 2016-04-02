@@ -10,7 +10,7 @@
     "test": "bin/test unit && bin/test system",
     "test-cov": "bin/test-cov",
     "test-ci-build": "bin/test-ci-build",
-    "postinstall": "bin/compile"
+    "compile": "bin/compile"
   },
   "repository": {
     "type": "git",
@@ -34,24 +34,23 @@
   },
   "homepage": "https://github.com/brentlintner/mimus",
   "dependencies": {
-    "coffee-script": "^1.7.1",
-    "esprima": "^1.2.2",
-    "minilog": "^2.0.5",
-    "resolve": "^0.7.4",
-    "rewire": "^2.0.1",
-    "sinon": "^1.10.1",
-    "underscore": "^1.6.0"
+    "coffee-script": "1.9.3",
+    "esprima": "2.4.0",
+    "minilog": "2.0.8",
+    "resolve": "1.1.6",
+    "rewire": "2.3.4",
+    "sinon": "1.15.3",
+    "underscore": "1.8.3"
   },
   "devDependencies": {
-    "chai": "^1.9.1",
-    "coffeelint": "^1.5.2",
-    "coveralls": "^2.11.1",
-    "istanbul": "^0.3.0",
-    "jshint": "^2.5.2",
-    "mocha": "^1.20.1",
-    "rewire": "^2.0.1",
-    "sinon": "^1.10.2",
-    "sinon-chai": "^2.5.0",
-    "wrench": "^1.5.8"
+    "chai": "3.0.0",
+    "coffeelint": "1.10.1",
+    "coveralls": "2.11.2",
+    "istanbul": "0.3.16",
+    "jshint": "2.8.0",
+    "mocha": "2.2.5",
+    "release-it": "^2.3.1",
+    "sinon-chai": "2.8.0",
+    "wrench": "1.5.8"
   }
 }

@@ -2,4 +2,4 @@
 coverage
 node_modules
 .vim.custom
-**/*.js
+test/**/*.js
