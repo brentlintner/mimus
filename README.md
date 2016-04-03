@@ -1,15 +1,6 @@
-mimus
-=====
+# mimus [![Circle CI](https://circleci.com/gh/brentlintner/mimus.svg?style=svg)](https://circleci.com/gh/brentlintner/mimus)
 
-[![NPM version](https://badge.fury.io/js/mimus.svg)](http://badge.fury.io/js/mimus)
-
-[![Build Status](https://drone.io/github.com/brentlintner/mimus/status.png)](https://drone.io/github.com/brentlintner/mimus/latest)
-
-[![Coverage Status](https://img.shields.io/coveralls/brentlintner/mimus.svg)](https://coveralls.io/r/brentlintner/mimus)
-
-[![Dependency Status](https://david-dm.org/brentlintner/mimus.svg)](https://david-dm.org/brentlintner/mimus)
-
-[![devDependency Status](https://david-dm.org/brentlintner/mimus/dev-status.svg)](https://david-dm.org/brentlintner/mimus#info=devDependencies)
+[![NPM version](https://badge.fury.io/js/mimus.svg)](http://badge.fury.io/js/mimus) [![Coverage Status](https://img.shields.io/coveralls/brentlintner/mimus.svg)](https://coveralls.io/r/brentlintner/mimus) [![Dependency Status](https://david-dm.org/brentlintner/mimus.svg)](https://david-dm.org/brentlintner/mimus) [![devDependency Status](https://david-dm.org/brentlintner/mimus/dev-status.svg)](https://david-dm.org/brentlintner/mimus#info=devDependencies)
 
 A stubbing library with a focus on having:
 
