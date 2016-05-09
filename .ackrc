@@ -1,0 +1,17 @@
+--smart-case
+--follow
+
+--type-set=plaintext=.md,.mdown,.markdown,.mkdn,.textile,.rst,.txt
+--type-set=csv=.txt,.csv,.tsv
+--type-set=gettext=.pot,.po
+--type-set=slim=.slim
+--type-set=haml=.haml
+--type-set=rubytemplates=.slim,.erb
+--type-set=sass=.sass,.scss
+
+--nogettext
+
+--ignore-dir=node_modules
+--ignore-dir=coverage
+--ignore-dir=.git
+--ignore-file=is:tags

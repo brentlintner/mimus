@@ -1,0 +1,33 @@
+env:
+  node: true
+  es6: true
+
+# TODO: make into new eslint strict types?
+rules:
+  curly: false
+  dot-notation: true
+  eqeqeq: false
+  camelcase: "never"
+  semi: false
+  no-sequences: false
+  strict: false
+  max-nested-callbacks: 4
+  no-mixed-requires: false
+  no-return-assign: false
+  no-unused-vars: false
+  no-process-exit: false
+
+globals:
+  $: true,
+  require: false,
+  document: true,
+  expect: true,
+  describe: false,
+  xdescribe: false,
+  it: false,
+  xit: false,
+  afterEach: false,
+  after: false,
+  beforeEach: false,
+  before: false,
+  Promise: true

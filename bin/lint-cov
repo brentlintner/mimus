@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
-istanbul report --include=coverage/**/coverage*.json json &&
-istanbul report --include=coverage/**/coverage*.json lcov &&
+set -x
+set -e
 
+istanbul report --include=coverage/**/coverage*.json json
+istanbul report --include=coverage/**/coverage*.json lcov
 istanbul check-coverage coverage/coverage-final.json \
   --statements 90 \
   --functions 90 \

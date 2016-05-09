@@ -1,7 +1,21 @@
 machine:
   node:
-    version: 4.4.0
+    version: 5.11.1
+
+checkout:
+  post:
+    - "[[ ! -s \"$(git rev-parse --git-dir)/shallow\" ]] || git fetch --unshallow"
+    - git fetch origin $CIRCLE_BRANCH
+
+dependencies:
+  cache_directories:
+    - node_modules
+  pre:
+    - sh bin/check-libstdc-deb
+    - sh bin/list-env-versions
 
 test:
   override:
     - npm run test-ci-build
+  post:
+    - npm run vile

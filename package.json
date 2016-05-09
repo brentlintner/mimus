@@ -9,7 +9,13 @@
     "test": "bin/test unit && bin/test system",
     "test-cov": "bin/test-cov",
     "test-ci-build": "bin/test-ci-build",
-    "compile": "bin/compile"
+    "compile": "bin/compile",
+    "compile-dev": "bin/compile-dev",
+    "vile": "vile -cpisd --nodecorations"
+  },
+  "engines": {
+    "node": ">= 0.12",
+    "npm": ">= 2.0.0"
   },
   "repository": {
     "type": "git",
@@ -38,14 +44,29 @@
     "minilog": "3.0.0",
     "resolve": "1.1.7",
     "rewire": "2.5.1",
-    "sinon": "1.17.3",
+    "sinon": "1.17.4",
     "underscore": "1.8.3"
   },
   "devDependencies": {
+    "@forthright/vile": ">=0.8.1",
+    "@forthright/vile-coffeelint": ">=0.1.10",
+    "@forthright/vile-comment": ">=0.1.14",
+    "@forthright/vile-coverage": ">=0.2.10",
+    "@forthright/vile-depcheck": ">=0.1.9",
+    "@forthright/vile-eclint": ">=0.1.7",
+    "@forthright/vile-git": ">=0.3.1",
+    "@forthright/vile-language": ">=0.1.9",
+    "@forthright/vile-length": ">=0.1.9",
+    "@forthright/vile-license": ">=0.3.11",
+    "@forthright/vile-ncu": ">=0.1.15",
+    "@forthright/vile-newline": ">=0.1.9",
+    "@forthright/vile-nsp": ">=0.2.9",
+    "@forthright/vile-stat": "0.0.9",
+    "@forthright/vile-whitespace": ">=0.1.8",
     "chai": "3.5.0",
-    "coveralls": "2.11.9",
-    "istanbul": "0.4.2",
+    "istanbul": "0.4.3",
     "mocha": "2.4.5",
+    "npm-check-updates": "^2.6.4",
     "release-it": "^2.3.1",
     "sinon-chai": "2.8.0",
     "wrench": "1.5.9"
