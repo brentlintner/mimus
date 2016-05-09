@@ -23,7 +23,7 @@ describe "requiring a module", ->
       .returns abs_path
 
     inject.__set__ "rewire", stub_rewire
-    rewired_module = inject.load p, __dirname, []
+    rewired_module = inject.load p, __dirname
 
     stub_rewire.should.have.been.calledWith abs_path
 

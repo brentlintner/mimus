@@ -92,7 +92,7 @@ parse_private_modules = (module_path, wired, accept) ->
       if typeof obj == "function"
         set wired, mod.name, _.extend mock.stub(), obj
 
-load = (module_path, base, accept) ->
+load = (module_path, base, accept=[]) ->
   full_path = abs_path module_path, base
   wired = rewire full_path
   parse_private_modules full_path, wired, accept
