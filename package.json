@@ -11,7 +11,8 @@
     "test-ci-build": "bin/test-ci-build",
     "compile": "bin/compile",
     "compile-dev": "bin/compile-dev",
-    "vile": "vile -cpisd --nodecorations"
+    "vile": "vile -cpisd --nodecorations",
+    "vile": "vile p -usi -x src.coffee:lib.js -n"
   },
   "engines": {
     "node": ">= 0.12",
