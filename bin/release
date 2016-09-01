@@ -7,4 +7,4 @@ fi
 
 npm run compile &&
 git add -f lib &&
-release-it -n -p -i $level -m "v%s"
+npm run release-it -n -p -i $level -m "v%s"

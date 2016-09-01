@@ -11,6 +11,7 @@
     "test-ci-build": "bin/test-ci-build",
     "compile": "bin/compile",
     "compile-dev": "bin/compile-dev",
+    "release-it": "release-it",
     "vile": "vile p -usi -x src.coffee:lib.js -n"
   },
   "engines": {
