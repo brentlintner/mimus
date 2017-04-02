@@ -2,7 +2,7 @@ path = require "path"
 resolve = require "resolve"
 fs = require "fs"
 rewire = require "rewire"
-_ = require "underscore"
+_ = require "lodash"
 esprima = require "esprima"
 mock = require "./mock"
 

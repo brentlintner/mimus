@@ -1,4 +1,4 @@
-_ = require "underscore"
+_ = require "lodash"
 chai = require "chai"
 sinon = require "sinon"
 mimus = require "./../../lib/mimus"

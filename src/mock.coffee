@@ -1,5 +1,5 @@
 sinon = require "sinon"
-_ = require "underscore"
+_ = require "lodash"
 sandbox = []
 
 register = (type, args...) ->
