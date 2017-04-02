@@ -37,7 +37,6 @@ describe "spying, and stubbing", ->
 
     stub.reset()
 
-
   it "uses a sinon spy", ->
     called = false
     obj = method: ->
