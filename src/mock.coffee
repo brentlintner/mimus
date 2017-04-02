@@ -2,15 +2,18 @@ sinon = require "sinon"
 _ = require "lodash"
 sandbox = []
 
-register = (type, args...) ->
+register = (type, obj, method, func) ->
   item = null
 
   try
-    item = sinon[type].apply(sinon, args)
+    if type == "stub" && !_.isEmpty(func)
+      item = sinon.stub(obj, method).callsFake(func)
+    else
+      item = sinon[type].apply(sinon, [ obj, method, func ])
+
     sandbox.push item
   catch e
     if /already wrapped/i.test e.message
-      obj = args[0]; method = args[1]
       item = obj[method]
     else throw e
 

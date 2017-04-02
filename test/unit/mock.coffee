@@ -10,15 +10,33 @@ mock = rewire "./../../lib/mock"
 _ = null; sinon_chai (sandbox) -> _ = sandbox
 
 describe "spying, and stubbing", ->
-  it "uses a sinon stub", ->
+  it "uses a sinon stub without a method", ->
     obj = method: ->
-    stub_method = ->
+    s = _.spy sinon, "stub"
+
+    stub = mock.stub obj, "method"
+
+    s.should.have.been.calledWith obj, "method"
+
+    expect(stub).to.be.ok
+
+  it "uses a sinon stub with a method", ->
+    obj = method: ->
+    stub_method = _.stub()
     s = _.spy sinon, "stub"
 
     stub = mock.stub obj, "method", stub_method
 
-    s.should.have.been.calledWith obj, "method", stub_method
+    s.should.have.been.calledWith obj, "method"
+
     expect(stub).to.be.ok
+
+    obj.method("a")
+
+    stub_method.should.have.been.calledWith "a"
+
+    stub.reset()
+
 
   it "uses a sinon spy", ->
     called = false
