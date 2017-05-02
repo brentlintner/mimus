@@ -1,6 +1,4 @@
-# mimus [![Circle CI](https://circleci.com/gh/brentlintner/mimus.svg?style=svg)](https://circleci.com/gh/brentlintner/mimus)
-
-[![NPM version](https://badge.fury.io/js/mimus.svg)](http://badge.fury.io/js/mimus)
+# mimus [![Circle CI](https://circleci.com/gh/brentlintner/mimus.svg?style=svg)](https://circleci.com/gh/brentlintner/mimus) [![score-badge](https://vile.io/api/v0/projects/mimus/badges/score?token=USryyHar5xQs7cBjNUdZ)](https://vile.io/~brentlintner/mimus) [![security-badge](https://vile.io/api/v0/projects/mimus/badges/security?token=USryyHar5xQs7cBjNUdZ)](https://vile.io/~brentlintner/mimus) [![coverage-badge](https://vile.io/api/v0/projects/mimus/badges/coverage?token=USryyHar5xQs7cBjNUdZ)](https://vile.io/~brentlintner/mimus) [![dependency-badge](https://vile.io/api/v0/projects/mimus/badges/dependency?token=USryyHar5xQs7cBjNUdZ)](https://vile.io/~brentlintner/mimus) [![NPM version](https://badge.fury.io/js/mimus.svg)](http://badge.fury.io/js/mimus)
 
 A stubbing library with a focus on having:
 
@@ -8,8 +6,7 @@ A stubbing library with a focus on having:
 * Dependency injection and auto stubbing.
 * A decoupled relationship with test runners.
 
-Note: Currently this project is using [Sinon](http://sinonjs.org) and
-[Rewire](https://www.npmjs.org/package/rewire). Check them out!
+Note: Currently this project is using [Sinon](http://sinonjs.org) and [Rewire](https://www.npmjs.org/package/rewire). Check them out!
 
 ## Installation
 
