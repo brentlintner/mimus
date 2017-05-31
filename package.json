@@ -12,7 +12,7 @@
     "compile": "bin/compile",
     "compile-dev": "bin/compile-dev",
     "release-it": "release-it",
-    "vile": "vile p -usi -x src.coffee:lib.js -n"
+    "vile": "vile p -u -x src.coffee:lib.js -n"
   },
   "engines": {
     "node": ">= 0.12",
@@ -56,16 +56,16 @@
     "release-it": "^2.7.1",
     "sinon-chai": "^2.9.0",
     "wrench": "^1.5.9",
-    "vile": ">=0.13.0",
-    "vile-coffeelint": ">=0.1.14",
-    "vile-comment": ">=0.1.17",
-    "vile-coverage": ">=0.2.14",
-    "vile-depcheck": ">=0.1.12",
-    "vile-eclint": ">=0.1.13",
-    "vile-git": ">=0.5.1",
-    "vile-language": ">=0.1.12",
-    "vile-ncu": ">=0.2.1",
-    "vile-nsp": ">=0.2.13",
-    "vile-stat": ">=0.0.14"
+    "vile": "^0.16.0",
+    "vile-coffeelint": "^0.1.14",
+    "vile-comment": "^0.1.17",
+    "vile-coverage": "^0.2.14",
+    "vile-depcheck": "^0.1.12",
+    "vile-eclint": "^0.1.13",
+    "vile-git": "^0.5.1",
+    "vile-language": "^0.1.12",
+    "vile-ncu": "^0.2.1",
+    "vile-nsp": "^0.2.13",
+    "vile-stat": "^0.0.15"
   }
 }
