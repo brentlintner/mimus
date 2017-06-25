@@ -41,6 +41,11 @@ depcheck:
       - pryjs
       - shelljs
       - "vile-*"
+retire:
+  config:
+    node: true
+    package: true
+    js: false
 
 coverage:
   config:
