@@ -46,7 +46,3 @@ retire:
     node: true
     package: true
     js: false
-
-coverage:
-  config:
-    path: coverage/lcov.info
