@@ -63,7 +63,7 @@
     "vile-depcheck": "^0.1.13",
     "vile-eclint": "^0.1.14",
     "vile-git": "^0.5.3",
-    "vile-ncu": "^0.2.4",
+    "vile-ncu": "^0.3.0",
     "vile-nsp": "^0.2.14",
     "vile-retire": "^0.1.3",
     "vile-stat": "^0.1.0",
