@@ -9,7 +9,7 @@ register = (type, obj, method, func) ->
     if type == "stub" && !_.isEmpty(func)
       item = sinon.stub(obj, method).callsFake(func)
     else
-      item = sinon[type].apply(sinon, [ obj, method, func ])
+      item = sinon[type].apply(sinon, [ obj, method ])
 
     sandbox.push item
   catch e
