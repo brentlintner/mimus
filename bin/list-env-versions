@@ -5,5 +5,3 @@ set -x
 uname -a
 node --version
 npm --version
-ruby --version
-gem --version
